@@ -1,1 +1,52 @@
-uh website and stuff tbh   
+<body>
+
+    <h1 id="CountryText"></h1>
+    <h1 id="PingText"></h1>
+
+</body>
+
+<script>
+
+    let PingTxt = document.getElementById("PingText");
+    let CountryTxt = document.getElementById("CountryText");
+
+
+    async function GetIp(ip) {
+        let response = await fetch(`https://api.ipify.org?format=json`);
+        let data = await response.json();
+
+        return data.ip;
+        
+    }
+
+    async function GetCountry() {
+        let ip = await GetIp();
+        let response = await fetch(`http://ip-api.com/json/${ip}`);
+        let data = await response.json();
+
+        CountryTxt.textContent = `Server: ${data.country}, ${data.city}`;
+        
+    }
+
+
+    async function ping() {
+        let start = performance.now();
+
+        await fetch("https://api.ipify.org?format=json");
+
+        let end = performance.now();
+
+        return Math.round(end-start);
+        
+    }
+
+    setInterval(async function update() {
+        let result = await ping();
+        PingTxt.textContent = "Ping: " + result + "ms";
+        
+    }, 1000);
+
+    GetCountry()
+
+    update();
+</script>
