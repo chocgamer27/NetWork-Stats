@@ -1,5 +1,5 @@
 <body style="background-color: #000000;">
-
+    <h1></h1>
     <h1 id="CountryText" style="position: relative; left: 0%; top: 20%; font-size: 75px; color: aliceblue;"></h1>
     <h1 id="PingText" style="position: relative; left: 0%; top: 30%; font-size: 75px; color: aliceblue;"></h1>
     <h1 style="position: relative; left: 0%; top: 50%; font-size: 15px; color: aliceblue;">(pinging google.com/generate_204)</h1>
@@ -46,6 +46,17 @@
     setInterval(async function update() {
         let result = await ping();
         PingTxt.textContent = "Ping: " + result + "ms";
+        if (result>400){
+            PingTxt.style.color = "rgb(180,0,0)"
+        } else if (result>250){
+            PingTxt.style.color = "rgb(200,130,20)"
+        } else if (result>150){
+            PingTxt.style.color = "rgb(200,192,0)"
+        } else if (result>80){
+            PingTxt.style.color = "rgb(150,200,0)"
+        } else {
+            PingTxt.style.color = "rgb(0,235,0)"
+        }
         
     }, 1000);
 
