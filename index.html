@@ -24,7 +24,7 @@
 
     async function GetCountry() {
         let ip = await GetIp();
-        let response = await fetch(`http://ip-api.com/json/${ip}`);
+        let response = await fetch(`https://ipwho.is/${ip}`);
         let data = await response.json();
 
         CountryTxt.textContent = `Server: ${data.country}, ${data.city}`;
@@ -62,5 +62,4 @@
 
     GetCountry()
 
-    update();
 </script>
