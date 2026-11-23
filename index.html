@@ -2,7 +2,7 @@
     <h1></h1>
     <h1 id="CountryText" style="position: relative; left: 0%; top: 20%; font-size: 75px; color: aliceblue;"></h1>
     <h1 id="PingText" style="position: relative; left: 0%; top: 30%; font-size: 75px; color: aliceblue;"></h1>
-    <h1 style="position: relative; left: 0%; top: 50%; font-size: 15px; color: aliceblue;">(pinging google.com/generate_204)</h1>
+    <h1 style="position: relative; left: 0%; top: 50%; font-size: 15px; color: aliceblue;">(pinging https://cloudflare.com/cdn-cgi/trace)</h1>
 
 
 </body>
@@ -35,7 +35,7 @@
     async function ping() {
         let start = performance.now();
 
-        await fetch("https://www.google.com/generate_204");
+        await fetch("https://cloudflare.com/cdn-cgi/trace", {cache: "no-store"});
 
         let end = performance.now();
 
