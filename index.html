@@ -1,11 +1,14 @@
-<body>
+<body style="background-color: #000000;">
 
-    <h1 id="CountryText"></h1>
-    <h1 id="PingText"></h1>
+    <h1 id="CountryText" style="position: relative; left: 0%; top: 20%; font-size: 75px; color: aliceblue;"></h1>
+    <h1 id="PingText" style="position: relative; left: 0%; top: 30%; font-size: 75px; color: aliceblue;"></h1>
+    <h1 style="position: relative; left: 0%; top: 50%; font-size: 15px; color: aliceblue;">(pinging google.com/generate_204)</h1>
+
 
 </body>
 
 <script>
+
 
     let PingTxt = document.getElementById("PingText");
     let CountryTxt = document.getElementById("CountryText");
@@ -32,7 +35,7 @@
     async function ping() {
         let start = performance.now();
 
-        await fetch("https://api.ipify.org?format=json");
+        await fetch("https://www.google.com/generate_204");
 
         let end = performance.now();
 
