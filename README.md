@@ -1,6 +1,6 @@
 # NetWork Stats
 
-Simple Website used to get your internet's ping.
+Simple Website used to get your ping.
 
 ## Description
 
